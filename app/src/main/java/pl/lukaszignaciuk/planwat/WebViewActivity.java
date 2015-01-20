@@ -21,13 +21,7 @@ import org.apache.http.util.EncodingUtils;
 public class WebViewActivity extends Activity {
 
     private WebView webView;
-    private String url;
-    private String postData;
-    private String nUrl;
-    private String group;
-    private String term;
-    private String login;
-    private String password;
+
     private boolean planLoaded;
     private boolean split = false;
     private String sessionID;
@@ -46,6 +40,10 @@ public class WebViewActivity extends Activity {
 
     private void startAndLogin(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String login;
+        String password;
+        String url;
+        String postData;
 
         login = prefs.getString("lgn", "");
         password = prefs.getString("pwd", "");
@@ -58,14 +56,18 @@ public class WebViewActivity extends Activity {
 
     private void loadPlan(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String term;
+        String group;
+        String nUrl;
+
         group = prefs.getString("group", "");
         term = prefs.getString("term", "");
 
         if(term.contentEquals("Zimowy")) {
-            nUrl = "https://s1.wcy.wat.edu.pl/ed/logged.php?" + sessionID + "&mid=328&iid=20144&prn=10&exv=" + group.toUpperCase();
+            nUrl = "https://s1.wcy.wat.edu.pl/ed/logged.php?" + sessionID + "&mid=328&iid=20144&prn=10&exv=" + group.toUpperCase(); //iid=20144 to semestr zimowy 2014/2015
         }
         else{
-            nUrl = "https://s1.wcy.wat.edu.pl/ed/logged.php?" + sessionID + "&mid=328&iid=20145&prn=10&exv=" + group.toUpperCase();
+            nUrl = "https://s1.wcy.wat.edu.pl/ed/logged.php?" + sessionID + "&mid=328&iid=20145&prn=10&exv=" + group.toUpperCase(); //iid=20145 to semestr letni 2014/2015
         }
         webView.loadUrl(nUrl);
     }
@@ -100,7 +102,6 @@ public class WebViewActivity extends Activity {
             split = false;
             planLoaded = false;
             startAndLogin();
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -141,7 +142,6 @@ public class WebViewActivity extends Activity {
             }
             pd.show();
         }
-
     }
 
     public static class PrefsFragment extends PreferenceFragment {
