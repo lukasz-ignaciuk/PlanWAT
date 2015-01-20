@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/category">
+
+    <EditTextPreference
+        android:key="lgn"
+        android:title="@string/login"
+        android:inputType="number"/>
+
+    <EditTextPreference
+        android:key="pwd"
+        android:title="@string/password"
+        android:password="true"/>
+
+    <EditTextPreference
+        android:key="group"
+        android:title="@string/group"
+        android:summary="@string/group_summary"/>
+
+    <ListPreference
+        android:key="term"
+        android:title="@string/term"
+        android:summary="@string/term_summary"
+        android:entries="@array/term_entries"
+        android:entryValues="@array/term_entries"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

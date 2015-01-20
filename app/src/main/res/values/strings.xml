@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlanWAT</string>
+    <string name="action_settings">Opcje</string>
+    <string name="action_refresh">Odśwież</string>
+    <string name="login">Login do eDziekanatu</string>
+    <string name="password">Hasło do eDziekanatu</string>
+    <string name="category">Kategoria</string>
+    <string name="group">Grupa</string>
+    <string name="group_summary">Grupa szkoleniowa, np. I2O1S1</string>
+    <string name="term">Semestr</string>
+    <string name="term_summary">Wybierz semestr letni lub zimowy</string>
+
+</resources>
