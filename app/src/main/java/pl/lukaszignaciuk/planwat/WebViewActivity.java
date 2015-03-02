@@ -33,6 +33,8 @@ public class WebViewActivity extends Activity {
 
         webView = (WebView) findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
         webView.setWebViewClient(new MyWebViewClient());
 
         startAndLogin();
